@@ -1,0 +1,27 @@
+$darkBlue: hsl(209, 23%, 22%),
+$veryDarkBlueBackground: hsl(207, 26%, 17%),
+$veryDarkBlueText: hsl(200, 15%, 8%),
+$darkGrey: hsl(0, 0%, 52%),
+$veryLightGrey: hsl(0, 0%, 98%),
+$white: hsl(0, 0%, 100%),
+
+$mediumDevices: 1100px,
+$smallDevices: 800px,
+$mobileDevices: 600px
+
+@mixin flex-center
+    display: flex
+    justify-content: center
+    align-items: center
+
+@mixin flex-justify-content($justify)
+    @include flex-center
+    justify-content: $justify
+
+@mixin flex-direction($direction)
+    display: flex
+    flex-direction: $direction
+
+@mixin margin-up-down($value)
+    margin-top: $value
+    margin-bottom: $value

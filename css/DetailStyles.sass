@@ -1,0 +1,86 @@
+@import 'variables'
+    
+#main__content
+    @include flex-center
+
+    #main__dashboard
+        @include flex-direction(column)
+
+        @media (max-width: $mobileDevices)
+            height: 90%
+            justify-content: start
+
+        .back__container
+            width: 200px
+            height: 30px
+            padding-top: 0.6rem
+            background-color: $darkBlue
+            border: 2px solid $darkBlue
+            border-radius: 0.6rem
+            text-align: center
+
+
+            @media (max-width: $mobileDevices)
+                margin-top: 2rem
+
+            a
+                color: $white
+                text-decoration: none
+
+        #CountryDetail
+            @include flex-direction(row)
+            @include flex-justify-content(space-between)
+            height: 65%
+
+            @media (max-width: $mobileDevices)
+                height: 90%
+                flex-direction: column
+
+            #Country__flag
+                width: 40%
+
+                @media (max-width: $mobileDevices)
+                    width: 80%
+                    margin-top: 3rem
+
+                img
+                    width: 100%
+                    height: 100%
+
+            #Country__datas
+                @include flex-direction(column)
+                width: 50%
+                height: 100%
+                justify-content: space-evenly
+                color: $white
+
+                @media (max-width: $mobileDevices)
+                    width: 75%
+
+                h2
+                    margin-top: 1.5rem
+
+                .datas__container
+                    display: grid
+                    grid-template-columns: 1fr 1fr
+
+                    @media (max-width: $mobileDevices)
+                        @include flex-direction(column)
+                        height: 70%
+                        justify-content: space-evenly
+            
+            #Country__border
+                @include flex-direction(column)
+                width: 100%
+
+                #borders-container
+                    display: flex
+                    justify-content: space-around
+                    flex-wrap: wrap
+
+                    .border-item
+                        width: 70px
+                        height: 30px
+                        text-align: center
+                        text-decoration: none
+                        color: white

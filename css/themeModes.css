@@ -1,0 +1,9 @@
+.main-light-mode {
+  background-color: hsl(0deg, 0%, 98%);
+  color: black;
+}
+
+.light-mode {
+  background-color: white;
+  color: black;
+}/*# sourceMappingURL=themeModes.css.map */
