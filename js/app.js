@@ -18,4 +18,3 @@ else {
     returnOriginalStyles();
     renderDashboard();
 }
-
