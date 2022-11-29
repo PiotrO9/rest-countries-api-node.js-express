@@ -10,8 +10,7 @@ const returnOriginalStyles = () => {
     mainContent.style.flexDirection = "column";
 };
 
-console.log("weszło");
-renderDashboard();
+//renderDashboard();
 
 // if(window.location.search.includes("?country=")) {
 //     console.log("if");

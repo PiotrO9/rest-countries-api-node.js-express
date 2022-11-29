@@ -42,8 +42,31 @@
                 </div>
             </div>
             <div id="main__dashboard">
-                <% for (i in all_countries) {%>
-                    
+                <% if(all_countries) { %>
+                    <% for(var i=0; i<all_countries.length; i++) {%>
+                        <div class="tile">
+                            <div class="tile__image">
+                                <img src="<%= all_countries[i].flags.png %>">
+                            </div>
+                            <div class="tile__content">
+                                <div class="tile__content__Name">
+                                    <a href="/<%= all_countries[i].name.common %>" target="_blank"><%= all_countries[i].name.common %></a>
+                                </div>
+                                <div class="tile__content__population">
+                                    <strong>Population: </strong>
+                                    <p><%= all_countries[i].population.toLocaleString() %></p>
+                                </div>
+                                <div class="tile__content__region">
+                                    <strong>Region: </strong>
+                                    <p><%= all_countries[i].region %></p>
+                                </div>
+                                <div class="tile__content__capital">
+                                    <strong>Capital</strong>
+                                    <p><%= all_countries[i].capital %></p>
+                                </div>
+                            </div>
+                        </div>
+                    <% } %>
                 <% } %>
             </div>
         </div>
