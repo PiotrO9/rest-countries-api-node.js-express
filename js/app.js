@@ -10,11 +10,16 @@ const returnOriginalStyles = () => {
     mainContent.style.flexDirection = "column";
 };
 
-if(window.location.search.includes("?country=")) {
-    document.getElementById("main__content__filters").style.display = "none";
-    renderDetail();
-}
-else {
-    returnOriginalStyles();
-    renderDashboard();
-}
+console.log("weszło");
+renderDashboard();
+
+// if(window.location.search.includes("?country=")) {
+//     console.log("if");
+//     document.getElementById("main__content__filters").style.display = "none";
+//     renderDetail();
+// }
+// else {
+//     console.log("else");
+//     returnOriginalStyles();
+//     renderDashboard();
+// }

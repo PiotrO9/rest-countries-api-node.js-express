@@ -27,7 +27,7 @@ const createCountryItemElement = (country) => {
 
     const anchorElement = document.createElement("a");
     anchorElement.innerHTML = country.name;
-    anchorElement.href = `?country=${country.code}`;
+    anchorElement.href = `/${(country.code).toLowerCase()}`;
     tileContentName.appendChild(anchorElement);
     contentContainer.appendChild(tileContentName);
 

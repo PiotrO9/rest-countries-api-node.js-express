@@ -4,9 +4,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Nunito+Sans:wght@300;600;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ece88f1e1c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/DetailStyles.css">
+    <link rel="stylesheet" href="/css/DesktopStyles.css">
+    <link rel="stylesheet" href="/css/themeModes.css">
+    <title><%= country.name %></title>
 </head>
 <body>
-    <h1><%= country.name %></h1>
+    <main>
+        <div id="main__content">
+            <div id="main__dashboard">
+                <!-- <h1><%= country.name %></h1> -->
+                <div class="back__container">
+                    <a href="/">Go back</a>
+                </div>
+                <div id="CountryDetail">
+                    <div id="Country__flag">
+                        <img src="<%= country.flagUrl %>"" alt="<%= country.name %>">
+                    </div>
+                    <div id="Country__datas">
+                        <h2 class="country-datas-header"><%= country.name %></h2>
+                        <div class="datas__container">
+                            <p><strong>Native name: </strong><%= country.nativeName %></p>
+                            <p><strong>Population: </strong><%= country.population %></p>
+                            <p><strong>Region: </strong><%= country.region %></p>
+                            <p><strong>Sub region: </strong><%= country.subregion %></p>
+                            <p><strong>Capital: </strong><%= country.capital %></p>
+                            <p><strong>Currency: </strong><%= country.currencies %></p>
+                            <p><strong>Languages: </strong><%= country.languages %></p>
+                        </div>
+                        <div id="Country__border">
+                            <p>Border Countries: </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script type="module" src="/js/dom-utils.js"></script>
+    <script type="module" src="/js/view-dashboard.js"></script>
+    <script type="module" src="/js/view-detail.js"></script>
+    <script type="module" src="/js/app.js"></script>
 </body>
 </html>
