@@ -1,9 +1,9 @@
 const express = require('express');
 const { get_country } = require('./lib/home_countries');
-
 const app = express();
-
 app.listen(3000);
+var http = require('http').createServer(app);
+var io = require('socket.io')(http);
 
 app.set('view engine', 'ejs');
 // app.use(express.static('public'));
@@ -20,3 +20,7 @@ app.get('/', (req, res) => {
 app.get('/:country', (req, res) => {
     
 });
+
+io.on('click', () => {
+    console.log("Clicked");
+})
