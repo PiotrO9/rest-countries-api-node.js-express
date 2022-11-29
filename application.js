@@ -2,8 +2,10 @@ const express = require('express');
 const { get_country } = require('./lib/home_countries');
 const app = express();
 app.listen(3000);
-var http = require('http').createServer(app);
-var io = require('socket.io')(http);
+var http = require('http');
+const server = http.createServer(app);
+const { Server } = require("socket.io");
+var io = new Server(server);
 
 app.set('view engine', 'ejs');
 // app.use(express.static('public'));
@@ -19,6 +21,14 @@ app.get('/', (req, res) => {
 
 app.get('/:country', (req, res) => {
     
+});
+
+
+io.on('connection', (socket) => {
+    console.log('a user connected');
+    socket.on('disconnect', () => {
+      console.log('user disconnected');
+    });
 });
 
 io.on('click', () => {
