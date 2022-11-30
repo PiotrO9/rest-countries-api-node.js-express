@@ -9,42 +9,46 @@
     <link rel="stylesheet" href="/css/DetailStyles.css">
     <link rel="stylesheet" href="/css/DesktopStyles.css">
     <link rel="stylesheet" href="/css/themeModes.css">
-    <title><%= country.name %></title>
+    <title><% country.name.common %></title>
 </head>
 <body>
     <main>
         <div id="main__content">
             <div id="main__dashboard">
-                <!-- <h1><%= country.name %></h1> -->
                 <div class="back__container">
                     <a href="/">Go back</a>
                 </div>
                 <div id="CountryDetail">
                     <div id="Country__flag">
-                        <img src="<%= country.flagUrl %>"" alt="<%= country.name %>">
+                        <img src="<%= country.flags.png %>"" alt="<%= country.name.common %>">
                     </div>
                     <div id="Country__datas">
-                        <h2 class="country-datas-header"><%= country.name %></h2>
+                        <h2 class="country-datas-header"><%= country.name.common %></h2>
                         <div class="datas__container">
-                            <p><strong>Native name: </strong><%= country.nativeName %></p>
-                            <p><strong>Population: </strong><%= country.population %></p>
+                            <p><strong>Native name: </strong><%= Object.values(country.name.nativeName)[0].official %></p>
+                            <p><strong>Population: </strong><%= country.population.toLocaleString() %></p>
                             <p><strong>Region: </strong><%= country.region %></p>
                             <p><strong>Sub region: </strong><%= country.subregion %></p>
                             <p><strong>Capital: </strong><%= country.capital %></p>
-                            <p><strong>Currency: </strong><%= country.currencies %></p>
-                            <p><strong>Languages: </strong><%= country.languages %></p>
+                            <p><strong>Currency: </strong><%= Object.values(country.currencies)
+                                                        .map((currency) => currency.name)
+                                                        .join(", ") %></p>
+                            <p><strong>Languages: </strong><%= Object.values(country.languages).join(", ") %></p>
                         </div>
                         <div id="Country__border">
                             <p>Border Countries: </p>
+                            <div id="borders-container">
+                                <% if(country.borders && country.borders.length > 0) { %>
+                                    <% for (var i=0; i<country.borders.length; i++) {%>
+                                        <a class="border-item" href="/countryAlpha/<%= country.borders[i] %>"><%= country.borders[i]%></a>
+                                    <% } %>
+                                <% } %>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
-    <script type="module" src="/js/dom-utils.js"></script>
-    <script type="module" src="/js/view-dashboard.js"></script>
-    <script type="module" src="/js/view-detail.js"></script>
-    <script type="module" src="/js/app.js"></script>
 </body>
 </html>

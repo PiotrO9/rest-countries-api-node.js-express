@@ -1,10 +1,15 @@
-import { io } from "https://cdn.socket.io/4.3.2/socket.io.esm.min.js";
+const ContinentSelect = document.querySelector("#ContinentSelect");
+const SearchCountryInput = document.querySelector("#query");
 
-const socket = io();
+ContinentSelect.addEventListener("change", function() {
+    if(this.selectedIndex) {
+        window.location.replace(`http://localhost:3000/region/${this.value}`);
+    }
+});
 
-console.log(123);
-document.querySelector("select").addEventListener("click", () => {
-    console.log("Wysłano");
-    console.log(socket.id);
-    socket.emit("click", "test");
-})
+SearchCountryInput.addEventListener("keyup", function(e) {
+    if(e.keyCode === 13)
+    {
+        window.location.replace(`http://localhost:3000/searchCountry/${this.value.toLowerCase()}`);
+    }
+});
